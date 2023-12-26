@@ -1,1 +1,1 @@
-local a=WebSocket.connect("ws://"+local_ip+":3553")local b=coroutine.running()a.OnMessage:Connect(function(c)local d,e=loadstring(c)if not d then warn(e)else task.spawn(d)end end)a.OnClose:Connect(function()coroutine.resume(b)end)coroutine.yield()
+local a=WebSocket.connect("ws://"..local_ip..":3553")local b=coroutine.running()a.OnMessage:Connect(function(c)local d,e=loadstring(c)if not d then warn(e)else task.spawn(d)end end)a.OnClose:Connect(function()coroutine.resume(b)end)coroutine.yield()
